@@ -1,0 +1,17 @@
+## Add taxonomy to a data frame
+
+d.tax <- data.frame()
+
+add.tax <- function(dataframe,taxonomy){
+    for(i in row.names(dataframe)){
+    tax.i <- as.character(taxonomy[row.names(taxonomy) == i,])
+  
+    results.i <- dataframe[i,]
+    i.table = data.frame(Taxonomy = tax.i)
+
+    d.tax = rbind(d.tax, cbind(results.i,i.table))
+ 
+    }    
+return(d.tax)
+}
+
